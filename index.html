@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h1 class="text-success text-center">Digtial It Solution Bd Ltd</h1>
+      <marquee direction="" class="text-danger font-weight-bold"
+        >Please Fill In The Form In Capital Letters Only!!!</marquee
+      >
+      <br />
+      <hr />
+      <div class="col-lg-8 m-auto d-block">
+        <form action="#" onsubmit="return validation()" class="bg-light">
+          <div class="form-group">
+            <label for="User">Username</label>
+            <input type="text" name="User" class="form-control" id="user" />
+            <!-- Show Eror Message -->
+            <span id="username" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="Pass">Password</label>
+            <input type="text" name="Password" class="form-control" id="Pass" />
+            <!-- Show Eror Message -->
+            <span id="Password" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cPass">Confirm Password</label>
+            <input type="text" name="Confirm Password" class="form-control" id="cPass" />
+            <!-- Show Eror Message -->
+            <span id="Cpassword" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="Mnum">Mobile Number</label>
+            <input type="text" name="Mobile Number" class="form-control" id="Mnum" />
+            <!-- Show Eror Message -->
+            <span id="Mnumber" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="Email id" class="form-control" id="email" />
+            <!-- Show Eror Message -->
+            <span id="Emailid" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <input type="submit" name="Submit" value="Submit" class="btn btn-success" id="blur" />
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+       function validation(){
+           let user = document.getElementById('user').value;
+           let pas = document.getElementById('Pass').value;
+           let Conpass = document.getElementById('cPass').value;
+           let number = document.getElementById('Mnum').value;
+           let emails = document.getElementById('email').value;
+
+           if(user == ""){
+      	document.getElementById('username').innerHTML =" ** Please fill the username field **";
+      	return false;
+      } else{
+                   .innerHTML = ""
+               }
+               if(user.length <= 6){
+                   document.getElementById('username').innerHTML =" ** Username Must Be At Least 6 Character **";
+      	return false;
+      } else{
+                   .innerHTML = ""
+               }
+               if(!isNaN(user)){
+      	document.getElementById('username').innerHTML =" ** only characters are allowed";
+      	return false;
+      }
+
+               if(pas == ""){
+      	document.getElementById('Password').innerHTML =" ** Please fill the Password field **";
+      	return false;
+      }
+               if(pas.length <= 8){
+                   document.getElementById('Password').innerHTML =" ** Password Must Be At Least 8 Character **";
+      	return false;
+      }
+
+               /* if(pas!=Conpass){
+      	document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+      	return false;
+      } */
+
+               if(Conpass == ""){
+      	document.getElementById('Cpassword').innerHTML =" ** Please fill the Password field **";
+      	return false;
+      }
+
+               if(number == ""){
+      	document.getElementById('Mnumber').innerHTML =" ** Please fill the Mobile Number field **";
+      	return false;
+      }
+               if(number.length <=10){
+                   document.getElementById('Mnumber').innerHTML = " ** Number Must Be At Least 11 Digit"
+               }
+               if(isNaN(number)){
+                   document.getElementById('Mnumber').innerHTML =" ** only Digits are allowed";
+      	return false;
+               }
+
+               if(emails == ""){
+      	document.getElementById('Emailid').innerHTML =" ** Please fill the Email field **";
+      	return false;
+      }
+               if(emails.indexOf('@') <= 0 ){
+      	document.getElementById('Emailid').innerHTML =" ** @ Invalid Format";
+      	return false;
+      }
+
+      if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+      	document.getElementById('Emailid').innerHTML =" ** . Invalid Format";
+      	return false;
+      }
+       }
+    </script>
+  </body>
+</html>
